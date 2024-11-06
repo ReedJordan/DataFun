@@ -64,47 +64,48 @@ public class DataFun{
 
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Look at the keyboard and find your favorite character. Is it a:"+
-                "\n\t1- Number\n\t2- Letter");
-        int userChoice = input.nextInt();
-
-        int numFav = Integer.MIN_VALUE;
-        String charaFav = null;
-
-        switch (userChoice){
-            case 1:
-                System.out.println("Please enter your favorite number:");
-                numFav = input.nextInt();
-                break;
-            case 2:
-                System.out.println("Please enter your favorite character:");
-                charaFav = input.nextLine();
-                break;
-        }
-
-        if(numFav != Integer.MIN_VALUE){
-
-        }
-        if(!(charaFav.equals(null))){
-            char ch = charaFav.charAt(0);
-            int asciiVal = ch;
-            System.out.print("The ascii value of your character is "+ asciiVal);
-            if(asciiVal >= 65 && asciiVal <= 90){
-                System.out.print(". Your character is an uppercase letter ");
-                if (asciiVal == 65 || asciiVal == 69 || asciiVal == 73 || asciiVal == 79 || asciiVal == 85 || asciiVal == 89){
-                    System.out.print("and a vowel.");
+        System.out.print("Look at the keyboard. What is your favorite character? ");
+        String userChoice = input.nextString();
+        System.out.println(" ");
+        
+        char choice = userChoice.charAt(0);
+        int asciiVal = choice;
+        
+        if (asciiVal >= 48 && asciiVal <= 57){
+            System.out.println(choice +" is a number, and its ASCII value is "+ asciiVal);
+        }else if (asciiVal >= 65 && asciiVal <= 90){
+            System.out.print(choice +" is an uppercase letter, ");
+                if (asciiVal == 65 || asciiVal == 69 || asciiVal == 73 || asciiVal == 79 || asciiVal == 85 || asciiVal == 89 ){
+                    System.out.print("it is a vowel, ");
                 }else{
-                    System.out.print("and a consonant.");
+                    System.out.print("it is a consonant, ");
                 }
-            }else if (asciiVal >= 97 && asciiVal <= 122){
-                System.out.print(". Your character is an lowercase letter ");
-                if (asciiVal == 97 || asciiVal == 101 || asciiVal == 105 || asciiVal == 111 || asciiVal == 117 || asciiVal == 122){
-                    System.out.print("and a vowel.");
+            int upperPlace = asciiVal - 64;
+            System.out.print("its ASCII value is "+ asciiVal +", and it is the "+ upperPlace);
+            switch(upperPlace){
+                case 1: System.out.print("st "); break;
+                case 2: System.out.print("nd "); break;
+                case 3: System.out.print("rd "); break;
+                default: System.out.print("th ");
+            }
+            System.out.print("letter of the alphabet.");
+        }else if (asciiVal >= 97 && asciiVal <= 122){
+            System.out.print(choice +" is a lowercase letter, ");
+                if (asciiVal == 97 || asciiVal == 101 || asciiVal == 105 || asciiVal == 111 || asciiVal == 117 || asciiVal == 121 ){
+                    System.out.print("it is a vowel, ");
                 }else{
-                    System.out.print("and a consonant.");
+                    System.out.print("it is a consonant, ");
                 }
+            int lowerPlace = asciiVal - 96;
+            System.out.print("its ASCII value is "+ asciiVal +", and it is the "+ lowerPlace);
+            switch(lowerPlace){
+                case 1: System.out.print("st "); break;
+                case 2: System.out.print("nd "); break;
+                case 3: System.out.print("rd "); break;
+                default: System.out.print("th ");
+            }
+            System.out.print("letter of the alphabet.");
         }
-
     }
 
 }
