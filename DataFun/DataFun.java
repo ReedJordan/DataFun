@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @ Reed Jordan
  * AP Comp Sci A w/ Mr. Smith
  * Started 11/5/2024
- * Ended 11/6/2024
+ * Last edited 11/7/2024
  */
 
 
