@@ -5,13 +5,13 @@ import java.util.Scanner;
  * @ Reed Jordan
  * AP Comp Sci A w/ Mr. Smith
  * Started 11/5/2024
- * Ended --/--/--
+ * Ended 11/6/2024
  */
 
 
 public class DataFun{
     public static void main(String[] args){
-        //favoriteNumberActivities();
+        favoriteNumberActivities();
         favoriteCharacterStuff();
 
     }
@@ -65,7 +65,7 @@ public class DataFun{
 
         Scanner input = new Scanner(System.in);
         System.out.print("Look at the keyboard. What is your favorite character? ");
-        String userChoice = input.nextString();
+        String userChoice = input.nextLine();
         System.out.println(" ");
         
         char choice = userChoice.charAt(0);
@@ -105,6 +105,8 @@ public class DataFun{
                 default: System.out.print("th ");
             }
             System.out.print("letter of the alphabet.");
+        }else{
+            System.out.println("You have a pretty weird favorite character.");
         }
     }
 
